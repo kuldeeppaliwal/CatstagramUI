@@ -3,14 +3,14 @@
         <div class="col-lg-4">            
         </div>
         <div class="col-lg-4">
-            <form>
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
                 <div class="form-group">
                   <label for="exampleInputEmail1">UserName</label>
-                  <input type="text" class="form-control">
+                  <input type="text" class="form-control" formControlName="username">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
+                  <input type="password" class="form-control" formControlName="password">
                 </div>                
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
