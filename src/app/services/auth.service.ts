@@ -1,0 +1,29 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService {
+  private loginPath = environment.apiurl + 'Identity/Login'
+  private registerPath = environment.apiurl + 'Identity/Register'
+  constructor(private http: HttpClient) { }
+
+  login(data: any): Observable<any> {
+    return this.http.post(this.loginPath, data);
+  }
+
+  register(data: any): Observable<any> {
+    return this.http.post(this.registerPath, data);
+  }
+
+  saveToken(token: any) {
+    console.log(token);
+    localStorage.setItem('token', token)
+  }
+  getToken() {
+    localStorage.getItem('token');
+  }
+
+}
