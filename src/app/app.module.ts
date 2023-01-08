@@ -10,6 +10,7 @@ import { AuthService } from './services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CreatepostComponent } from './createpost/createpost.component'
 import { CatService } from './services/cat.service';
+import { AuthGuardService } from './services/auth-guard.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,7 @@ import { CatService } from './services/cat.service';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [AuthService, CatService],
+  providers: [AuthService, CatService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
