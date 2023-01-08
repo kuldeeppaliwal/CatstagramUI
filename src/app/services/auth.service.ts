@@ -18,12 +18,11 @@ export class AuthService {
     return this.http.post(this.registerPath, data);
   }
 
-  saveToken(token: any) {
-    console.log(token);
+  saveToken(token: any) {    
     localStorage.setItem('token', token)
   }
   getToken() {
-    localStorage.getItem('token');
+    return localStorage.getItem('token');
   }
 
 }
