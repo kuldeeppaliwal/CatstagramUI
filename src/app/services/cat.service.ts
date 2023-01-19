@@ -16,4 +16,7 @@ export class CatService {
   create(data: any): Observable<Cat> {
     return this.http.post<Cat>(this.catPath, data);
   }
+  getCats():Observable <Array<Cat>>{
+    return this.http.get<Array<Cat>>(this.catPath)
+  }  
 }

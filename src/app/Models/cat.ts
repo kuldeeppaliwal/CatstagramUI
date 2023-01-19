@@ -1,5 +1,5 @@
 export interface Cat{
     id: number;
-    ImageUrl:string;
+    imageUrl:string;
     Description:string;
 }
